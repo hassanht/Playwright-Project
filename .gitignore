@@ -1,0 +1,8 @@
+node_modules/
+dist/
+coverage/
+allure-report/
+screenshots/
+test-results/
+playwright-report/
+*/snapshots/
