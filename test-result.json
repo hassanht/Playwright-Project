@@ -1,0 +1,246 @@
+{
+  "config": {
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {},
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/Users/Hassan/Desktop/SauceDemo_playwright/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "C:/Users/Hassan/Desktop/SauceDemo_playwright/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/?(*.)@(spec|test).*"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "reporter": [
+      [
+        "dot",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-result.json"
+        }
+      ],
+      [
+        "C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\node_modules\\allure-playwright\\dist\\index.js",
+        null
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 15000
+    },
+    "configFile": "C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\playwright.config.ts",
+    "rootDir": "C:/Users/Hassan/Desktop/SauceDemo_playwright/tests",
+    "quiet": false,
+    "shard": null,
+    "updateSnapshots": "missing",
+    "version": "1.29.2",
+    "workers": 6,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "tests\\inventoryTest.spec.ts",
+      "file": "tests/inventoryTest.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Verify checkout process for multiple items",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "status": "passed",
+                  "duration": 11338,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Add all items into cart and calculate total price",
+                      "duration": 889
+                    },
+                    {
+                      "title": "Verify add to cart count is correct",
+                      "duration": 67
+                    },
+                    {
+                      "title": "Click on cart icon",
+                      "duration": 92
+                    },
+                    {
+                      "title": "Click on checkout button",
+                      "duration": 93
+                    },
+                    {
+                      "title": "Submit checkout information",
+                      "duration": 331
+                    },
+                    {
+                      "title": "Verify total price",
+                      "duration": 64
+                    },
+                    {
+                      "title": "Click on finish button",
+                      "duration": 96
+                    },
+                    {
+                      "title": "Verify visibility of order confirmation text",
+                      "duration": 341
+                    }
+                  ],
+                  "startTime": "2023-01-18T08:07:01.588Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "200749ca089d5b7fccb9-db0c687ce05b5a55bb9e",
+          "file": "tests/inventoryTest.spec.ts",
+          "line": 11,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "tests\\loginTest.spec.ts",
+      "file": "tests/loginTest.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Verify login with valid username and password",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "status": "passed",
+                  "duration": 10678,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Login to website",
+                      "duration": 1328
+                    },
+                    {
+                      "title": "Wait for invenotry url",
+                      "duration": 407
+                    },
+                    {
+                      "title": "Click on menu button",
+                      "duration": 3
+                    },
+                    {
+                      "title": "Verify visibility of logout link",
+                      "duration": 1
+                    },
+                    {
+                      "title": "Click on logout link",
+                      "duration": 638
+                    },
+                    {
+                      "title": "Wait for login url",
+                      "duration": 3
+                    },
+                    {
+                      "title": "Verify visibility of login form",
+                      "duration": 243
+                    }
+                  ],
+                  "startTime": "2023-01-18T08:07:01.585Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "84f1d83eaf624422fd3b-2b9585f73002fd8be7b1",
+          "file": "tests/loginTest.spec.ts",
+          "line": 12,
+          "column": 5
+        },
+        {
+          "title": "Verify login with looked out user",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "status": "passed",
+                  "duration": 8749,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Login to website",
+                      "duration": 455
+                    },
+                    {
+                      "title": "Verify visibility of error message and text",
+                      "duration": 380
+                    }
+                  ],
+                  "startTime": "2023-01-18T08:07:01.584Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "84f1d83eaf624422fd3b-01699950213ac3635a28",
+          "file": "tests/loginTest.spec.ts",
+          "line": 40,
+          "column": 5
+        }
+      ]
+    }
+  ],
+  "errors": []
+}
