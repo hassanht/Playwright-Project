@@ -63,7 +63,7 @@
       "specs": [
         {
           "title": "Verify checkout process for multiple items",
-          "ok": true,
+          "ok": false,
           "tags": [],
           "tests": [
             {
@@ -75,20 +75,33 @@
               "results": [
                 {
                   "workerIndex": 0,
-                  "status": "passed",
-                  "duration": 11338,
-                  "errors": [],
+                  "status": "failed",
+                  "duration": 10891,
+                  "error": {
+                    "message": "A snapshot doesn't exist at C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\inventoryTest.spec.ts-snapshots\\Verify-checkout-process-for-multiple-items-1-chromium-win32.png, writing actual.",
+                    "stack": "Error: A snapshot doesn't exist at C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\inventoryTest.spec.ts-snapshots\\Verify-checkout-process-for-multiple-items-1-chromium-win32.png, writing actual.\n    at C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\inventoryTest.spec.ts:40:56\n    at C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\inventoryTest.spec.ts:38:5"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\inventoryTest.spec.ts",
+                        "column": 56,
+                        "line": 40
+                      },
+                      "message": "Error: A snapshot doesn't exist at C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\inventoryTest.spec.ts-snapshots\\Verify-checkout-process-for-multiple-items-1-chromium-win32.png, writing actual.\n\n\u001b[90m   at \u001b[39mtests\\inventoryTest.spec.ts:40\n\n\u001b[0m \u001b[90m 38 |\u001b[39m     \u001b[36mawait\u001b[39m test\u001b[33m.\u001b[39mstep(\u001b[32m\"Verify visibility of order confirmation text\"\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\u001b[0m\n\u001b[0m \u001b[90m 39 |\u001b[39m         \u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 40 |\u001b[39m         expect(\u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mscreenshot({fullPage\u001b[33m:\u001b[39m\u001b[36mtrue\u001b[39m}))\u001b[33m.\u001b[39mtoMatchSnapshot()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                                                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 41 |\u001b[39m         expect(\u001b[36mawait\u001b[39m cartPage\u001b[33m.\u001b[39mgetThankYouOrderText())\u001b[33m.\u001b[39mtoContain(\u001b[32m'THANK YOU FOR YOUR ORDER'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 42 |\u001b[39m     })\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 43 |\u001b[39m })\u001b[33m;\u001b[39m\u001b[0m\n\n\u001b[2m    at C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\inventoryTest.spec.ts:40:56\u001b[22m\n\u001b[2m    at C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\inventoryTest.spec.ts:38:5\u001b[22m"
+                    }
+                  ],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
                   "steps": [
                     {
                       "title": "Add all items into cart and calculate total price",
-                      "duration": 889
+                      "duration": 916
                     },
                     {
                       "title": "Verify add to cart count is correct",
-                      "duration": 67
+                      "duration": 65
                     },
                     {
                       "title": "Click on cart icon",
@@ -100,26 +113,42 @@
                     },
                     {
                       "title": "Submit checkout information",
-                      "duration": 331
+                      "duration": 315
                     },
                     {
                       "title": "Verify total price",
-                      "duration": 64
+                      "duration": 61
                     },
                     {
                       "title": "Click on finish button",
-                      "duration": 96
+                      "duration": 97
                     },
                     {
                       "title": "Verify visibility of order confirmation text",
-                      "duration": 341
+                      "duration": 230
                     }
                   ],
-                  "startTime": "2023-01-18T08:07:01.588Z",
-                  "attachments": []
+                  "startTime": "2023-01-26T06:45:21.030Z",
+                  "attachments": [
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\test-results\\tests-inventoryTest-Verify-checkout-process-for-multiple-items-chromium\\trace.zip"
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\test-results\\tests-inventoryTest-Verify-checkout-process-for-multiple-items-chromium\\test-failed-1.png"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\inventoryTest.spec.ts",
+                    "column": 56,
+                    "line": 40
+                  }
                 }
               ],
-              "status": "expected"
+              "status": "unexpected"
             }
           ],
           "id": "200749ca089d5b7fccb9-db0c687ce05b5a55bb9e",
@@ -137,7 +166,7 @@
       "specs": [
         {
           "title": "Verify login with valid username and password",
-          "ok": true,
+          "ok": false,
           "tags": [],
           "tests": [
             {
@@ -149,20 +178,41 @@
               "results": [
                 {
                   "workerIndex": 1,
-                  "status": "passed",
-                  "duration": 10678,
-                  "errors": [],
+                  "status": "failed",
+                  "duration": 9952,
+                  "error": {
+                    "message": "A snapshot doesn't exist at C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\loginTest.spec.ts-snapshots\\Verify-login-with-valid-username-and-password-1-chromium-win32.png, writing actual.",
+                    "stack": "Error: A snapshot doesn't exist at C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\loginTest.spec.ts-snapshots\\Verify-login-with-valid-username-and-password-1-chromium-win32.png, writing actual.\n    at C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\loginTest.spec.ts:22:55\n    at C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\loginTest.spec.ts:19:3"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\loginTest.spec.ts",
+                        "column": 55,
+                        "line": 22
+                      },
+                      "message": "Error: A snapshot doesn't exist at C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\loginTest.spec.ts-snapshots\\Verify-login-with-valid-username-and-password-1-chromium-win32.png, writing actual.\n\n\u001b[90m   at \u001b[39mtests\\loginTest.spec.ts:22\n\n\u001b[0m \u001b[90m 20 |\u001b[39m     \u001b[36mconst\u001b[39m testCaseName \u001b[33m=\u001b[39m testInfo\u001b[33m.\u001b[39mtitle\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 21 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForURL(\u001b[33mURLS\u001b[39m\u001b[33m.\u001b[39minventory)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 22 |\u001b[39m     expect(\u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mscreenshot({ fullPage\u001b[33m:\u001b[39m \u001b[36mtrue\u001b[39m }))\u001b[33m.\u001b[39mtoMatchSnapshot()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                                                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 23 |\u001b[39m   })\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 24 |\u001b[39m   \u001b[36mawait\u001b[39m test\u001b[33m.\u001b[39mstep(\u001b[32m'Click on menu button'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\u001b[0m\n\u001b[0m \u001b[90m 25 |\u001b[39m     inventoryPage\u001b[33m.\u001b[39mclickMenuBtn()\u001b[33m;\u001b[39m\u001b[0m\n\n\u001b[2m    at C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\loginTest.spec.ts:22:55\u001b[22m\n\u001b[2m    at C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\loginTest.spec.ts:19:3\u001b[22m"
+                    },
+                    {
+                      "location": {
+                        "file": "C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\loginTest.spec.ts",
+                        "column": 55,
+                        "line": 38
+                      },
+                      "message": "Error: A snapshot doesn't exist at C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\loginTest.spec.ts-snapshots\\Verify-login-with-valid-username-and-password-2-chromium-win32.png, writing actual.\n\n\u001b[90m   at \u001b[39mtests\\loginTest.spec.ts:38\n\n\u001b[0m \u001b[90m 36 |\u001b[39m   \u001b[36mawait\u001b[39m test\u001b[33m.\u001b[39mstep(\u001b[32m'Verify visibility of login form'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\u001b[0m\n\u001b[0m \u001b[90m 37 |\u001b[39m     expect(\u001b[36mawait\u001b[39m loginPage\u001b[33m.\u001b[39misLoginFormDisplayed())\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 38 |\u001b[39m     expect(\u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mscreenshot({ fullPage\u001b[33m:\u001b[39m \u001b[36mtrue\u001b[39m }))\u001b[33m.\u001b[39mtoMatchSnapshot()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                                                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 39 |\u001b[39m   })\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 40 |\u001b[39m })\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 41 |\u001b[39m\u001b[0m\n\n\u001b[2m    at C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\loginTest.spec.ts:38:55\u001b[22m\n\u001b[2m    at C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\loginTest.spec.ts:36:3\u001b[22m"
+                    }
+                  ],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
                   "steps": [
                     {
                       "title": "Login to website",
-                      "duration": 1328
+                      "duration": 842
                     },
                     {
                       "title": "Wait for invenotry url",
-                      "duration": 407
+                      "duration": 273
                     },
                     {
                       "title": "Click on menu button",
@@ -170,36 +220,52 @@
                     },
                     {
                       "title": "Verify visibility of logout link",
-                      "duration": 1
+                      "duration": 0
                     },
                     {
                       "title": "Click on logout link",
-                      "duration": 638
+                      "duration": 633
                     },
                     {
                       "title": "Wait for login url",
-                      "duration": 3
+                      "duration": 5
                     },
                     {
                       "title": "Verify visibility of login form",
-                      "duration": 243
+                      "duration": 197
                     }
                   ],
-                  "startTime": "2023-01-18T08:07:01.585Z",
-                  "attachments": []
+                  "startTime": "2023-01-26T06:45:21.030Z",
+                  "attachments": [
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\test-results\\tests-loginTest-Verify-login-with-valid-username-and-password-chromium\\trace.zip"
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\test-results\\tests-loginTest-Verify-login-with-valid-username-and-password-chromium\\test-failed-1.png"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\loginTest.spec.ts",
+                    "column": 55,
+                    "line": 22
+                  }
                 }
               ],
-              "status": "expected"
+              "status": "unexpected"
             }
           ],
           "id": "84f1d83eaf624422fd3b-2b9585f73002fd8be7b1",
           "file": "tests/loginTest.spec.ts",
-          "line": 12,
+          "line": 14,
           "column": 5
         },
         {
           "title": "Verify login with looked out user",
-          "ok": true,
+          "ok": false,
           "tags": [],
           "tests": [
             {
@@ -211,32 +277,61 @@
               "results": [
                 {
                   "workerIndex": 2,
-                  "status": "passed",
-                  "duration": 8749,
-                  "errors": [],
+                  "status": "failed",
+                  "duration": 8594,
+                  "error": {
+                    "message": "A snapshot doesn't exist at C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\loginTest.spec.ts-snapshots\\Verify-login-with-looked-out-user-1-chromium-win32.png, writing actual.",
+                    "stack": "Error: A snapshot doesn't exist at C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\loginTest.spec.ts-snapshots\\Verify-login-with-looked-out-user-1-chromium-win32.png, writing actual.\n    at C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\loginTest.spec.ts:49:55\n    at C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\loginTest.spec.ts:46:3"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\loginTest.spec.ts",
+                        "column": 55,
+                        "line": 49
+                      },
+                      "message": "Error: A snapshot doesn't exist at C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\loginTest.spec.ts-snapshots\\Verify-login-with-looked-out-user-1-chromium-win32.png, writing actual.\n\n\u001b[90m   at \u001b[39mtests\\loginTest.spec.ts:49\n\n\u001b[0m \u001b[90m 47 |\u001b[39m     expect(\u001b[36mawait\u001b[39m loginPage\u001b[33m.\u001b[39misErrorMsgDisplayed())\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 48 |\u001b[39m     expect(\u001b[36mawait\u001b[39m loginPage\u001b[33m.\u001b[39mgetErrorMsgText())\u001b[33m.\u001b[39mtoContain(\u001b[32m'Epic sadface: Sorry, this user has been locked out.'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 49 |\u001b[39m     expect(\u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mscreenshot({ fullPage\u001b[33m:\u001b[39m \u001b[36mtrue\u001b[39m }))\u001b[33m.\u001b[39mtoMatchSnapshot()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                                                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 50 |\u001b[39m   })\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 51 |\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 52 |\u001b[39m })\u001b[33m;\u001b[39m\u001b[0m\n\n\u001b[2m    at C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\loginTest.spec.ts:49:55\u001b[22m\n\u001b[2m    at C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\loginTest.spec.ts:46:3\u001b[22m"
+                    }
+                  ],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
                   "steps": [
                     {
                       "title": "Login to website",
-                      "duration": 455
+                      "duration": 457
                     },
                     {
                       "title": "Verify visibility of error message and text",
-                      "duration": 380
+                      "duration": 250
                     }
                   ],
-                  "startTime": "2023-01-18T08:07:01.584Z",
-                  "attachments": []
+                  "startTime": "2023-01-26T06:45:21.031Z",
+                  "attachments": [
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\test-results\\tests-loginTest-Verify-login-with-looked-out-user-chromium\\trace.zip"
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\test-results\\tests-loginTest-Verify-login-with-looked-out-user-chromium\\test-failed-1.png"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\loginTest.spec.ts",
+                    "column": 55,
+                    "line": 49
+                  }
                 }
               ],
-              "status": "expected"
+              "status": "unexpected"
             }
           ],
           "id": "84f1d83eaf624422fd3b-01699950213ac3635a28",
           "file": "tests/loginTest.spec.ts",
-          "line": 40,
+          "line": 42,
           "column": 5
         }
       ]

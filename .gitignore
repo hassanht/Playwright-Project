@@ -6,3 +6,4 @@ screenshots/
 test-results/
 playwright-report/
 */snapshots/
+test-result.json
