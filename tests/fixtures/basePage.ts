@@ -9,12 +9,16 @@ export const test = base.extend<{
     cartPage: CartPage;
 }>({
     loginPage: async ({ page }, use) => {
+        console.log(LoginPage);
         use(new LoginPage(page));
     },
     inventoryPage: async ({ page }, use) => {
+        console.log(InventoryPage);
         use(new InventoryPage(page));
     },
     cartPage: async ({ page }, use) => {
+        console.log(CartPage);
         use(new CartPage(page));
     },
+
 });

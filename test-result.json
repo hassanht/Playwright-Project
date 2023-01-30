@@ -56,109 +56,6 @@
   },
   "suites": [
     {
-      "title": "tests\\inventoryTest.spec.ts",
-      "file": "tests/inventoryTest.spec.ts",
-      "column": 0,
-      "line": 0,
-      "specs": [
-        {
-          "title": "Verify checkout process for multiple items",
-          "ok": false,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "chromium",
-              "projectName": "chromium",
-              "results": [
-                {
-                  "workerIndex": 0,
-                  "status": "failed",
-                  "duration": 10891,
-                  "error": {
-                    "message": "A snapshot doesn't exist at C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\inventoryTest.spec.ts-snapshots\\Verify-checkout-process-for-multiple-items-1-chromium-win32.png, writing actual.",
-                    "stack": "Error: A snapshot doesn't exist at C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\inventoryTest.spec.ts-snapshots\\Verify-checkout-process-for-multiple-items-1-chromium-win32.png, writing actual.\n    at C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\inventoryTest.spec.ts:40:56\n    at C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\inventoryTest.spec.ts:38:5"
-                  },
-                  "errors": [
-                    {
-                      "location": {
-                        "file": "C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\inventoryTest.spec.ts",
-                        "column": 56,
-                        "line": 40
-                      },
-                      "message": "Error: A snapshot doesn't exist at C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\inventoryTest.spec.ts-snapshots\\Verify-checkout-process-for-multiple-items-1-chromium-win32.png, writing actual.\n\n\u001b[90m   at \u001b[39mtests\\inventoryTest.spec.ts:40\n\n\u001b[0m \u001b[90m 38 |\u001b[39m     \u001b[36mawait\u001b[39m test\u001b[33m.\u001b[39mstep(\u001b[32m\"Verify visibility of order confirmation text\"\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\u001b[0m\n\u001b[0m \u001b[90m 39 |\u001b[39m         \u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 40 |\u001b[39m         expect(\u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mscreenshot({fullPage\u001b[33m:\u001b[39m\u001b[36mtrue\u001b[39m}))\u001b[33m.\u001b[39mtoMatchSnapshot()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                                                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 41 |\u001b[39m         expect(\u001b[36mawait\u001b[39m cartPage\u001b[33m.\u001b[39mgetThankYouOrderText())\u001b[33m.\u001b[39mtoContain(\u001b[32m'THANK YOU FOR YOUR ORDER'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 42 |\u001b[39m     })\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 43 |\u001b[39m })\u001b[33m;\u001b[39m\u001b[0m\n\n\u001b[2m    at C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\inventoryTest.spec.ts:40:56\u001b[22m\n\u001b[2m    at C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\inventoryTest.spec.ts:38:5\u001b[22m"
-                    }
-                  ],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "steps": [
-                    {
-                      "title": "Add all items into cart and calculate total price",
-                      "duration": 916
-                    },
-                    {
-                      "title": "Verify add to cart count is correct",
-                      "duration": 65
-                    },
-                    {
-                      "title": "Click on cart icon",
-                      "duration": 92
-                    },
-                    {
-                      "title": "Click on checkout button",
-                      "duration": 93
-                    },
-                    {
-                      "title": "Submit checkout information",
-                      "duration": 315
-                    },
-                    {
-                      "title": "Verify total price",
-                      "duration": 61
-                    },
-                    {
-                      "title": "Click on finish button",
-                      "duration": 97
-                    },
-                    {
-                      "title": "Verify visibility of order confirmation text",
-                      "duration": 230
-                    }
-                  ],
-                  "startTime": "2023-01-26T06:45:21.030Z",
-                  "attachments": [
-                    {
-                      "name": "trace",
-                      "contentType": "application/zip",
-                      "path": "C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\test-results\\tests-inventoryTest-Verify-checkout-process-for-multiple-items-chromium\\trace.zip"
-                    },
-                    {
-                      "name": "screenshot",
-                      "contentType": "image/png",
-                      "path": "C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\test-results\\tests-inventoryTest-Verify-checkout-process-for-multiple-items-chromium\\test-failed-1.png"
-                    }
-                  ],
-                  "errorLocation": {
-                    "file": "C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\inventoryTest.spec.ts",
-                    "column": 56,
-                    "line": 40
-                  }
-                }
-              ],
-              "status": "unexpected"
-            }
-          ],
-          "id": "200749ca089d5b7fccb9-db0c687ce05b5a55bb9e",
-          "file": "tests/inventoryTest.spec.ts",
-          "line": 11,
-          "column": 5
-        }
-      ]
-    },
-    {
       "title": "tests\\loginTest.spec.ts",
       "file": "tests/loginTest.spec.ts",
       "column": 0,
@@ -177,81 +74,52 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 1,
+                  "workerIndex": 0,
                   "status": "failed",
-                  "duration": 9952,
+                  "duration": 10708,
                   "error": {
-                    "message": "A snapshot doesn't exist at C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\loginTest.spec.ts-snapshots\\Verify-login-with-valid-username-and-password-1-chromium-win32.png, writing actual.",
-                    "stack": "Error: A snapshot doesn't exist at C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\loginTest.spec.ts-snapshots\\Verify-login-with-valid-username-and-password-1-chromium-win32.png, writing actual.\n    at C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\loginTest.spec.ts:22:55\n    at C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\loginTest.spec.ts:19:3"
+                    "message": "locator.fill: Target closed\n=========================== logs ===========================\nwaiting for locator('[id=\"user-name\"]')\n============================================================",
+                    "stack": "locator.fill: Target closed\n=========================== logs ===========================\nwaiting for locator('[id=\"user-name\"]')\n============================================================\n    at PlaywrightWrapper.fill (C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\pageFactory\\plawrightWrapper.ts:20:23)\n    at LoginPage.enterUsername (C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\pageFactory\\loginPage.ts:31:39)\n    at LoginPage.login (C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\pageFactory\\loginPage.ts:24:20)\n    at C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\loginTest.spec.ts:17:21\n    at C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\loginTest.spec.ts:16:14"
                   },
                   "errors": [
                     {
                       "location": {
-                        "file": "C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\loginTest.spec.ts",
-                        "column": 55,
-                        "line": 22
+                        "file": "C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\pageFactory\\plawrightWrapper.ts",
+                        "column": 23,
+                        "line": 20
                       },
-                      "message": "Error: A snapshot doesn't exist at C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\loginTest.spec.ts-snapshots\\Verify-login-with-valid-username-and-password-1-chromium-win32.png, writing actual.\n\n\u001b[90m   at \u001b[39mtests\\loginTest.spec.ts:22\n\n\u001b[0m \u001b[90m 20 |\u001b[39m     \u001b[36mconst\u001b[39m testCaseName \u001b[33m=\u001b[39m testInfo\u001b[33m.\u001b[39mtitle\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 21 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForURL(\u001b[33mURLS\u001b[39m\u001b[33m.\u001b[39minventory)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 22 |\u001b[39m     expect(\u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mscreenshot({ fullPage\u001b[33m:\u001b[39m \u001b[36mtrue\u001b[39m }))\u001b[33m.\u001b[39mtoMatchSnapshot()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                                                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 23 |\u001b[39m   })\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 24 |\u001b[39m   \u001b[36mawait\u001b[39m test\u001b[33m.\u001b[39mstep(\u001b[32m'Click on menu button'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\u001b[0m\n\u001b[0m \u001b[90m 25 |\u001b[39m     inventoryPage\u001b[33m.\u001b[39mclickMenuBtn()\u001b[33m;\u001b[39m\u001b[0m\n\n\u001b[2m    at C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\loginTest.spec.ts:22:55\u001b[22m\n\u001b[2m    at C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\loginTest.spec.ts:19:3\u001b[22m"
-                    },
-                    {
-                      "location": {
-                        "file": "C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\loginTest.spec.ts",
-                        "column": 55,
-                        "line": 38
-                      },
-                      "message": "Error: A snapshot doesn't exist at C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\loginTest.spec.ts-snapshots\\Verify-login-with-valid-username-and-password-2-chromium-win32.png, writing actual.\n\n\u001b[90m   at \u001b[39mtests\\loginTest.spec.ts:38\n\n\u001b[0m \u001b[90m 36 |\u001b[39m   \u001b[36mawait\u001b[39m test\u001b[33m.\u001b[39mstep(\u001b[32m'Verify visibility of login form'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\u001b[0m\n\u001b[0m \u001b[90m 37 |\u001b[39m     expect(\u001b[36mawait\u001b[39m loginPage\u001b[33m.\u001b[39misLoginFormDisplayed())\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 38 |\u001b[39m     expect(\u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mscreenshot({ fullPage\u001b[33m:\u001b[39m \u001b[36mtrue\u001b[39m }))\u001b[33m.\u001b[39mtoMatchSnapshot()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                                                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 39 |\u001b[39m   })\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 40 |\u001b[39m })\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 41 |\u001b[39m\u001b[0m\n\n\u001b[2m    at C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\loginTest.spec.ts:38:55\u001b[22m\n\u001b[2m    at C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\loginTest.spec.ts:36:3\u001b[22m"
+                      "message": "locator.fill: Target closed\n=========================== logs ===========================\nwaiting for locator('[id=\"user-name\"]')\n============================================================\n\n\u001b[90m   at \u001b[39m..\\pageFactory\\plawrightWrapper.ts:20\n\n\u001b[0m \u001b[90m 18 |\u001b[39m     \u001b[36masync\u001b[39m fill(element\u001b[33m:\u001b[39m \u001b[33mLocator\u001b[39m\u001b[33m,\u001b[39m text\u001b[33m:\u001b[39m string) {\u001b[0m\n\u001b[0m \u001b[90m 19 |\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 20 |\u001b[39m         \u001b[36mawait\u001b[39m element\u001b[33m.\u001b[39mfill(text)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 21 |\u001b[39m     }\u001b[0m\n\u001b[0m \u001b[90m 22 |\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 23 |\u001b[39m     \u001b[36masync\u001b[39m getText(element\u001b[33m:\u001b[39m \u001b[33mLocator\u001b[39m)\u001b[33m:\u001b[39m \u001b[33mPromise\u001b[39m\u001b[33m<\u001b[39m\u001b[33mstring\u001b[39m\u001b[33m>\u001b[39m {\u001b[0m\n\n\u001b[2m    at PlaywrightWrapper.fill (C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\pageFactory\\plawrightWrapper.ts:20:23)\u001b[22m\n\u001b[2m    at LoginPage.enterUsername (C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\pageFactory\\loginPage.ts:31:39)\u001b[22m\n\u001b[2m    at LoginPage.login (C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\pageFactory\\loginPage.ts:24:20)\u001b[22m\n\u001b[2m    at C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\loginTest.spec.ts:17:21\u001b[22m\n\u001b[2m    at C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\loginTest.spec.ts:16:14\u001b[22m"
                     }
                   ],
-                  "stdout": [],
+                  "stdout": [
+                    {
+                      "text": "LoginPage\n"
+                    }
+                  ],
                   "stderr": [],
                   "retry": 0,
                   "steps": [
                     {
                       "title": "Login to website",
-                      "duration": 842
-                    },
-                    {
-                      "title": "Wait for invenotry url",
-                      "duration": 273
-                    },
-                    {
-                      "title": "Click on menu button",
-                      "duration": 3
-                    },
-                    {
-                      "title": "Verify visibility of logout link",
-                      "duration": 0
-                    },
-                    {
-                      "title": "Click on logout link",
-                      "duration": 633
-                    },
-                    {
-                      "title": "Wait for login url",
-                      "duration": 5
-                    },
-                    {
-                      "title": "Verify visibility of login form",
-                      "duration": 197
+                      "duration": 5889,
+                      "error": {
+                        "message": "locator.fill: Target closed\n=========================== logs ===========================\nwaiting for locator('[id=\"user-name\"]')\n============================================================",
+                        "stack": "locator.fill: Target closed\n=========================== logs ===========================\nwaiting for locator('[id=\"user-name\"]')\n============================================================\n    at PlaywrightWrapper.fill (C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\pageFactory\\plawrightWrapper.ts:20:23)\n    at LoginPage.enterUsername (C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\pageFactory\\loginPage.ts:31:39)\n    at LoginPage.login (C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\pageFactory\\loginPage.ts:24:20)\n    at C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\loginTest.spec.ts:17:21\n    at C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\loginTest.spec.ts:16:14"
+                      }
                     }
                   ],
-                  "startTime": "2023-01-26T06:45:21.030Z",
+                  "startTime": "2023-01-27T10:32:22.927Z",
                   "attachments": [
                     {
                       "name": "trace",
                       "contentType": "application/zip",
                       "path": "C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\test-results\\tests-loginTest-Verify-login-with-valid-username-and-password-chromium\\trace.zip"
-                    },
-                    {
-                      "name": "screenshot",
-                      "contentType": "image/png",
-                      "path": "C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\test-results\\tests-loginTest-Verify-login-with-valid-username-and-password-chromium\\test-failed-1.png"
                     }
                   ],
                   "errorLocation": {
-                    "file": "C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\loginTest.spec.ts",
-                    "column": 55,
-                    "line": 22
+                    "file": "C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\pageFactory\\plawrightWrapper.ts",
+                    "column": 23,
+                    "line": 20
                   }
                 }
               ],
@@ -276,53 +144,52 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 2,
+                  "workerIndex": 1,
                   "status": "failed",
-                  "duration": 8594,
+                  "duration": 12726,
                   "error": {
-                    "message": "A snapshot doesn't exist at C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\loginTest.spec.ts-snapshots\\Verify-login-with-looked-out-user-1-chromium-win32.png, writing actual.",
-                    "stack": "Error: A snapshot doesn't exist at C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\loginTest.spec.ts-snapshots\\Verify-login-with-looked-out-user-1-chromium-win32.png, writing actual.\n    at C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\loginTest.spec.ts:49:55\n    at C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\loginTest.spec.ts:46:3"
+                    "message": "locator.fill: Target closed\n=========================== logs ===========================\nwaiting for locator('[id=\"user-name\"]')\n============================================================",
+                    "stack": "locator.fill: Target closed\n=========================== logs ===========================\nwaiting for locator('[id=\"user-name\"]')\n============================================================\n    at PlaywrightWrapper.fill (C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\pageFactory\\plawrightWrapper.ts:20:23)\n    at LoginPage.enterUsername (C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\pageFactory\\loginPage.ts:31:39)\n    at LoginPage.login (C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\pageFactory\\loginPage.ts:24:20)\n    at C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\loginTest.spec.ts:45:21\n    at C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\loginTest.spec.ts:44:14"
                   },
                   "errors": [
                     {
                       "location": {
-                        "file": "C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\loginTest.spec.ts",
-                        "column": 55,
-                        "line": 49
+                        "file": "C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\pageFactory\\plawrightWrapper.ts",
+                        "column": 23,
+                        "line": 20
                       },
-                      "message": "Error: A snapshot doesn't exist at C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\loginTest.spec.ts-snapshots\\Verify-login-with-looked-out-user-1-chromium-win32.png, writing actual.\n\n\u001b[90m   at \u001b[39mtests\\loginTest.spec.ts:49\n\n\u001b[0m \u001b[90m 47 |\u001b[39m     expect(\u001b[36mawait\u001b[39m loginPage\u001b[33m.\u001b[39misErrorMsgDisplayed())\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 48 |\u001b[39m     expect(\u001b[36mawait\u001b[39m loginPage\u001b[33m.\u001b[39mgetErrorMsgText())\u001b[33m.\u001b[39mtoContain(\u001b[32m'Epic sadface: Sorry, this user has been locked out.'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 49 |\u001b[39m     expect(\u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mscreenshot({ fullPage\u001b[33m:\u001b[39m \u001b[36mtrue\u001b[39m }))\u001b[33m.\u001b[39mtoMatchSnapshot()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                                                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 50 |\u001b[39m   })\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 51 |\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 52 |\u001b[39m })\u001b[33m;\u001b[39m\u001b[0m\n\n\u001b[2m    at C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\loginTest.spec.ts:49:55\u001b[22m\n\u001b[2m    at C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\loginTest.spec.ts:46:3\u001b[22m"
+                      "message": "locator.fill: Target closed\n=========================== logs ===========================\nwaiting for locator('[id=\"user-name\"]')\n============================================================\n\n\u001b[90m   at \u001b[39m..\\pageFactory\\plawrightWrapper.ts:20\n\n\u001b[0m \u001b[90m 18 |\u001b[39m     \u001b[36masync\u001b[39m fill(element\u001b[33m:\u001b[39m \u001b[33mLocator\u001b[39m\u001b[33m,\u001b[39m text\u001b[33m:\u001b[39m string) {\u001b[0m\n\u001b[0m \u001b[90m 19 |\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 20 |\u001b[39m         \u001b[36mawait\u001b[39m element\u001b[33m.\u001b[39mfill(text)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 21 |\u001b[39m     }\u001b[0m\n\u001b[0m \u001b[90m 22 |\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 23 |\u001b[39m     \u001b[36masync\u001b[39m getText(element\u001b[33m:\u001b[39m \u001b[33mLocator\u001b[39m)\u001b[33m:\u001b[39m \u001b[33mPromise\u001b[39m\u001b[33m<\u001b[39m\u001b[33mstring\u001b[39m\u001b[33m>\u001b[39m {\u001b[0m\n\n\u001b[2m    at PlaywrightWrapper.fill (C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\pageFactory\\plawrightWrapper.ts:20:23)\u001b[22m\n\u001b[2m    at LoginPage.enterUsername (C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\pageFactory\\loginPage.ts:31:39)\u001b[22m\n\u001b[2m    at LoginPage.login (C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\pageFactory\\loginPage.ts:24:20)\u001b[22m\n\u001b[2m    at C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\loginTest.spec.ts:45:21\u001b[22m\n\u001b[2m    at C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\loginTest.spec.ts:44:14\u001b[22m"
                     }
                   ],
-                  "stdout": [],
+                  "stdout": [
+                    {
+                      "text": "LoginPage\n"
+                    }
+                  ],
                   "stderr": [],
                   "retry": 0,
                   "steps": [
                     {
                       "title": "Login to website",
-                      "duration": 457
-                    },
-                    {
-                      "title": "Verify visibility of error message and text",
-                      "duration": 250
+                      "duration": 8217,
+                      "error": {
+                        "message": "locator.fill: Target closed\n=========================== logs ===========================\nwaiting for locator('[id=\"user-name\"]')\n============================================================",
+                        "stack": "locator.fill: Target closed\n=========================== logs ===========================\nwaiting for locator('[id=\"user-name\"]')\n============================================================\n    at PlaywrightWrapper.fill (C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\pageFactory\\plawrightWrapper.ts:20:23)\n    at LoginPage.enterUsername (C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\pageFactory\\loginPage.ts:31:39)\n    at LoginPage.login (C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\pageFactory\\loginPage.ts:24:20)\n    at C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\loginTest.spec.ts:45:21\n    at C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\loginTest.spec.ts:44:14"
+                      }
                     }
                   ],
-                  "startTime": "2023-01-26T06:45:21.031Z",
+                  "startTime": "2023-01-27T10:32:22.927Z",
                   "attachments": [
                     {
                       "name": "trace",
                       "contentType": "application/zip",
                       "path": "C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\test-results\\tests-loginTest-Verify-login-with-looked-out-user-chromium\\trace.zip"
-                    },
-                    {
-                      "name": "screenshot",
-                      "contentType": "image/png",
-                      "path": "C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\test-results\\tests-loginTest-Verify-login-with-looked-out-user-chromium\\test-failed-1.png"
                     }
                   ],
                   "errorLocation": {
-                    "file": "C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\loginTest.spec.ts",
-                    "column": 55,
-                    "line": 49
+                    "file": "C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\pageFactory\\plawrightWrapper.ts",
+                    "column": 23,
+                    "line": 20
                   }
                 }
               ],
@@ -331,7 +198,7 @@
           ],
           "id": "84f1d83eaf624422fd3b-01699950213ac3635a28",
           "file": "tests/loginTest.spec.ts",
-          "line": 42,
+          "line": 43,
           "column": 5
         }
       ]

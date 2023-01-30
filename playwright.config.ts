@@ -38,13 +38,14 @@ const config: PlaywrightTestConfig = {
     /* Maximum time each action such as `click()` can take. Defaults to 0 (no limit). */
     actionTimeout: 0,
     screenshot: 'only-on-failure',
-    // headless: false,
+    headless: false,
     viewport: { width: 1920, height: 1080 },
     launchOptions: {
       slowMo: 50,
     },
     /* Base URL to use in actions like `await page.goto('/')`. */
-    baseURL: 'https://www.saucedemo.com',
+    // baseURL: 'https://www.saucedemo.com',
+    baseURL: 'https://marketplace.bimtvist.com/',
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'retain-on-failure',
   },

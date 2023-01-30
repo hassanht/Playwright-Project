@@ -20,6 +20,7 @@ test('Verify login with valid username and password', async ({ page, loginPage, 
     const testCaseName = testInfo.title;
     await page.waitForURL(URLS.inventory);
     expect(await page.screenshot({ fullPage: true })).toMatchSnapshot();
+    
   });
   await test.step('Click on menu button', async () => {
     inventoryPage.clickMenuBtn();
