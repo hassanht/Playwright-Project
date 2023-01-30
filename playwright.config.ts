@@ -44,6 +44,10 @@ const config: PlaywrightTestConfig = {
       slowMo: 500,
     },
     /* Base URL to use in actions like `await page.goto('/')`. */
+<<<<<<< HEAD
+=======
+    // baseURL: 'https://www.saucedemo.com',
+>>>>>>> 12719309e5d221183f8daa29b49747b6f2ec24fe
     baseURL: 'https://marketplace.bimtvist.com/',
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'retain-on-failure',

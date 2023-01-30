@@ -2,7 +2,9 @@ node_modules/
 dist/
 coverage/
 allure-report/
+allure-results/
 screenshots/
 test-results/
 playwright-report/
 */snapshots/
+test-result.json

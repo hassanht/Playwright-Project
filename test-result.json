@@ -56,13 +56,22 @@
   },
   "suites": [
     {
+<<<<<<< HEAD
       "title": "tests/smokeTest.spec.ts",
       "file": "tests/smokeTest.spec.ts",
+=======
+      "title": "tests\\loginTest.spec.ts",
+      "file": "tests/loginTest.spec.ts",
+>>>>>>> 12719309e5d221183f8daa29b49747b6f2ec24fe
       "column": 0,
       "line": 0,
       "specs": [
         {
+<<<<<<< HEAD
           "title": "Signup",
+=======
+          "title": "Verify login with valid username and password",
+>>>>>>> 12719309e5d221183f8daa29b49747b6f2ec24fe
           "ok": false,
           "tags": [],
           "tests": [
@@ -75,6 +84,7 @@
               "results": [
                 {
                   "workerIndex": 0,
+<<<<<<< HEAD
                   "status": "timedOut",
                   "duration": 29999,
                   "error": {
@@ -83,15 +93,36 @@
                   "errors": [
                     {
                       "message": "\u001b[31mTest timeout of 30000ms exceeded while setting up \"emailPage\".\u001b[39m"
+=======
+                  "status": "failed",
+                  "duration": 10708,
+                  "error": {
+                    "message": "locator.fill: Target closed\n=========================== logs ===========================\nwaiting for locator('[id=\"user-name\"]')\n============================================================",
+                    "stack": "locator.fill: Target closed\n=========================== logs ===========================\nwaiting for locator('[id=\"user-name\"]')\n============================================================\n    at PlaywrightWrapper.fill (C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\pageFactory\\plawrightWrapper.ts:20:23)\n    at LoginPage.enterUsername (C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\pageFactory\\loginPage.ts:31:39)\n    at LoginPage.login (C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\pageFactory\\loginPage.ts:24:20)\n    at C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\loginTest.spec.ts:17:21\n    at C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\loginTest.spec.ts:16:14"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\pageFactory\\plawrightWrapper.ts",
+                        "column": 23,
+                        "line": 20
+                      },
+                      "message": "locator.fill: Target closed\n=========================== logs ===========================\nwaiting for locator('[id=\"user-name\"]')\n============================================================\n\n\u001b[90m   at \u001b[39m..\\pageFactory\\plawrightWrapper.ts:20\n\n\u001b[0m \u001b[90m 18 |\u001b[39m     \u001b[36masync\u001b[39m fill(element\u001b[33m:\u001b[39m \u001b[33mLocator\u001b[39m\u001b[33m,\u001b[39m text\u001b[33m:\u001b[39m string) {\u001b[0m\n\u001b[0m \u001b[90m 19 |\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 20 |\u001b[39m         \u001b[36mawait\u001b[39m element\u001b[33m.\u001b[39mfill(text)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 21 |\u001b[39m     }\u001b[0m\n\u001b[0m \u001b[90m 22 |\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 23 |\u001b[39m     \u001b[36masync\u001b[39m getText(element\u001b[33m:\u001b[39m \u001b[33mLocator\u001b[39m)\u001b[33m:\u001b[39m \u001b[33mPromise\u001b[39m\u001b[33m<\u001b[39m\u001b[33mstring\u001b[39m\u001b[33m>\u001b[39m {\u001b[0m\n\n\u001b[2m    at PlaywrightWrapper.fill (C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\pageFactory\\plawrightWrapper.ts:20:23)\u001b[22m\n\u001b[2m    at LoginPage.enterUsername (C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\pageFactory\\loginPage.ts:31:39)\u001b[22m\n\u001b[2m    at LoginPage.login (C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\pageFactory\\loginPage.ts:24:20)\u001b[22m\n\u001b[2m    at C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\loginTest.spec.ts:17:21\u001b[22m\n\u001b[2m    at C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\loginTest.spec.ts:16:14\u001b[22m"
+>>>>>>> 12719309e5d221183f8daa29b49747b6f2ec24fe
                     }
                   ],
                   "stdout": [
                     {
+<<<<<<< HEAD
                       "text": "Locator@internal:text=\"Accept\"i\n"
+=======
+                      "text": "LoginPage\n"
+>>>>>>> 12719309e5d221183f8daa29b49747b6f2ec24fe
                     }
                   ],
                   "stderr": [],
                   "retry": 0,
+<<<<<<< HEAD
                   "startTime": "2023-01-27T12:04:01.114Z",
                   "attachments": [
                     {
@@ -110,15 +141,117 @@
                       "path": "/Users/sl2studio/Desktop/Virtua_marketplace/Playwright/test-results/tests-smokeTest-Signup-chromium/test-failed-2.png"
                     }
                   ]
+=======
+                  "steps": [
+                    {
+                      "title": "Login to website",
+                      "duration": 5889,
+                      "error": {
+                        "message": "locator.fill: Target closed\n=========================== logs ===========================\nwaiting for locator('[id=\"user-name\"]')\n============================================================",
+                        "stack": "locator.fill: Target closed\n=========================== logs ===========================\nwaiting for locator('[id=\"user-name\"]')\n============================================================\n    at PlaywrightWrapper.fill (C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\pageFactory\\plawrightWrapper.ts:20:23)\n    at LoginPage.enterUsername (C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\pageFactory\\loginPage.ts:31:39)\n    at LoginPage.login (C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\pageFactory\\loginPage.ts:24:20)\n    at C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\loginTest.spec.ts:17:21\n    at C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\loginTest.spec.ts:16:14"
+                      }
+                    }
+                  ],
+                  "startTime": "2023-01-27T10:32:22.927Z",
+                  "attachments": [
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\test-results\\tests-loginTest-Verify-login-with-valid-username-and-password-chromium\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\pageFactory\\plawrightWrapper.ts",
+                    "column": 23,
+                    "line": 20
+                  }
+>>>>>>> 12719309e5d221183f8daa29b49747b6f2ec24fe
                 }
               ],
               "status": "unexpected"
             }
           ],
+<<<<<<< HEAD
           "id": "960ddbe51f3170031a31-877be9728ddd8503e4a5",
           "file": "tests/smokeTest.spec.ts",
           "line": 12,
           "column": 5
+=======
+          "id": "84f1d83eaf624422fd3b-2b9585f73002fd8be7b1",
+          "file": "tests/loginTest.spec.ts",
+          "line": 14,
+          "column": 5
+        },
+        {
+          "title": "Verify login with looked out user",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "status": "failed",
+                  "duration": 12726,
+                  "error": {
+                    "message": "locator.fill: Target closed\n=========================== logs ===========================\nwaiting for locator('[id=\"user-name\"]')\n============================================================",
+                    "stack": "locator.fill: Target closed\n=========================== logs ===========================\nwaiting for locator('[id=\"user-name\"]')\n============================================================\n    at PlaywrightWrapper.fill (C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\pageFactory\\plawrightWrapper.ts:20:23)\n    at LoginPage.enterUsername (C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\pageFactory\\loginPage.ts:31:39)\n    at LoginPage.login (C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\pageFactory\\loginPage.ts:24:20)\n    at C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\loginTest.spec.ts:45:21\n    at C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\loginTest.spec.ts:44:14"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\pageFactory\\plawrightWrapper.ts",
+                        "column": 23,
+                        "line": 20
+                      },
+                      "message": "locator.fill: Target closed\n=========================== logs ===========================\nwaiting for locator('[id=\"user-name\"]')\n============================================================\n\n\u001b[90m   at \u001b[39m..\\pageFactory\\plawrightWrapper.ts:20\n\n\u001b[0m \u001b[90m 18 |\u001b[39m     \u001b[36masync\u001b[39m fill(element\u001b[33m:\u001b[39m \u001b[33mLocator\u001b[39m\u001b[33m,\u001b[39m text\u001b[33m:\u001b[39m string) {\u001b[0m\n\u001b[0m \u001b[90m 19 |\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 20 |\u001b[39m         \u001b[36mawait\u001b[39m element\u001b[33m.\u001b[39mfill(text)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 21 |\u001b[39m     }\u001b[0m\n\u001b[0m \u001b[90m 22 |\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 23 |\u001b[39m     \u001b[36masync\u001b[39m getText(element\u001b[33m:\u001b[39m \u001b[33mLocator\u001b[39m)\u001b[33m:\u001b[39m \u001b[33mPromise\u001b[39m\u001b[33m<\u001b[39m\u001b[33mstring\u001b[39m\u001b[33m>\u001b[39m {\u001b[0m\n\n\u001b[2m    at PlaywrightWrapper.fill (C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\pageFactory\\plawrightWrapper.ts:20:23)\u001b[22m\n\u001b[2m    at LoginPage.enterUsername (C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\pageFactory\\loginPage.ts:31:39)\u001b[22m\n\u001b[2m    at LoginPage.login (C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\pageFactory\\loginPage.ts:24:20)\u001b[22m\n\u001b[2m    at C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\loginTest.spec.ts:45:21\u001b[22m\n\u001b[2m    at C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\loginTest.spec.ts:44:14\u001b[22m"
+                    }
+                  ],
+                  "stdout": [
+                    {
+                      "text": "LoginPage\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Login to website",
+                      "duration": 8217,
+                      "error": {
+                        "message": "locator.fill: Target closed\n=========================== logs ===========================\nwaiting for locator('[id=\"user-name\"]')\n============================================================",
+                        "stack": "locator.fill: Target closed\n=========================== logs ===========================\nwaiting for locator('[id=\"user-name\"]')\n============================================================\n    at PlaywrightWrapper.fill (C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\pageFactory\\plawrightWrapper.ts:20:23)\n    at LoginPage.enterUsername (C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\pageFactory\\loginPage.ts:31:39)\n    at LoginPage.login (C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\pageFactory\\loginPage.ts:24:20)\n    at C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\loginTest.spec.ts:45:21\n    at C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\tests\\tests\\loginTest.spec.ts:44:14"
+                      }
+                    }
+                  ],
+                  "startTime": "2023-01-27T10:32:22.927Z",
+                  "attachments": [
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\test-results\\tests-loginTest-Verify-login-with-looked-out-user-chromium\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\Hassan\\Desktop\\SauceDemo_playwright\\pageFactory\\plawrightWrapper.ts",
+                    "column": 23,
+                    "line": 20
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "84f1d83eaf624422fd3b-01699950213ac3635a28",
+          "file": "tests/loginTest.spec.ts",
+          "line": 43,
+          "column": 5
+>>>>>>> 12719309e5d221183f8daa29b49747b6f2ec24fe
         }
       ]
     }
