@@ -16,7 +16,6 @@ export class PlaywrightWrapper {
     }
 
     async fill(element: Locator, text: string) {
-
         await element.fill(text);
     }
 

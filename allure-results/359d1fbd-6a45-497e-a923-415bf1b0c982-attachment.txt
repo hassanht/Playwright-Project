@@ -1,0 +1,1 @@
+Locator@//a[@class="crossIcon"]

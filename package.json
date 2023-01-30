@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npm run delete-report-folder && npx playwright test && npm run report",
+    "test": "npx playwright test && npm run report",
     "report": "allure serve",
     "delete-report-folder": "cmd.exe /c delete-report-folder.bat"
   },
