@@ -1,34 +1,21 @@
-import { Page, test as base } from "@playwright/test";
-import { LoginPage } from "../../pageFactory/loginPage";
-import { InventoryPage } from "../../pageFactory/inventoryPage";
-import { CartPage } from "../../pageFactory/cartPage";
+import { test as base } from "@playwright/test";
 import { SignupPage } from "../../pageFactory/signupPage";
 import { EmailPage } from "../../pageFactory/emailPage";
+import { signInPage } from "../../pageFactory/signInPage";
 
 export const test = base.extend<{
-    loginPage: LoginPage;
-    inventoryPage: InventoryPage;
-    cartPage: CartPage;
     signupPage: SignupPage;
     emailPage: EmailPage;
+    signInPage: signInPage;
 
 }>({
-    loginPage: async ({ page }, use) => {
-        console.log(LoginPage);
-        use(new LoginPage(page));
-    },
-    inventoryPage: async ({ page }, use) => {
-        console.log(InventoryPage);
-        use(new InventoryPage(page));
-    },
-    cartPage: async ({ page }, use) => {
-        console.log(CartPage);
-        use(new CartPage(page));
-    },
     signupPage: async ({ page }, use) => {
         use(new SignupPage(page));
     },
-    emailPage: async ({ context }, use) => {
-        new EmailPage(await context.newPage());
+    emailPage: async ({ page }, use) => {
+        use(new EmailPage(page));
+    },
+    signInPage: async ({ page }, use) => {
+        use(new signInPage(page));
     },
 });

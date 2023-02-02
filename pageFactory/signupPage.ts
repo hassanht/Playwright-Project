@@ -19,7 +19,7 @@ export class SignupPage {
     #avatarImage: Locator;
     #chooseAvatar: Locator;
     #avatarAccountButton: Locator;
-    
+    #confirmationMessage:Locator;
 
     constructor(page: Page) {
         this.#page = page;
@@ -39,8 +39,7 @@ export class SignupPage {
         this.#avatarImage = this.#page.locator('div.cascade-slider_item.now');
         this.#chooseAvatar = this.#page.locator('#cascade-slider span');
         this.#avatarAccountButton = this.#page.locator('button.btn.custom-btn');
-        
-
+        this.#confirmationMessage=this.#page.getByText('An email has been sent to your Email address to verify your account')
     }
 
     async signup(username: string, password: string): Promise<void> {
@@ -56,6 +55,7 @@ export class SignupPage {
         await this.clickcreateAccountButton();
         await this.selectAvatar();
         await this.clickAvatarAccountButton();
+        
     }
    
 
@@ -115,7 +115,13 @@ export class SignupPage {
 
     async clickAvatarAccountButton(): Promise<void> {
         await this.#playwrightWrapper.click(this.#avatarAccountButton);
+        await this.#page.waitForNavigation({waitUntil:"networkidle"});
     }
+
+    async isDisplayedConfirmationMessage(): Promise<boolean> {
+        return this.#confirmationMessage.isVisible();
+
+    } 
 
     async getDynamicName(): Promise<string> {
         return this.#dynamicName;
@@ -128,9 +134,9 @@ export class SignupPage {
         console.log(this.#dynamicName);
     }
 
-    // async waitForPageLoad(): Promise<void> {
-    //     await this.#playwrightWrapper.waitForPageLoad();
-    // }
+    async waitForPageLoad(): Promise<void> {
+        await this.#playwrightWrapper.waitForPageLoad();
+    }
 
     // async isLoginFormDisplayed(): Promise<boolean> {
     //     return await this.#playwrightWrapper.isVisible(this.#loginForm)

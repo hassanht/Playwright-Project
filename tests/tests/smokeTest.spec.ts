@@ -1,6 +1,7 @@
 import { expect, Page } from "@playwright/test";
 import { test } from "../fixtures/basePage";
 import { USER_CREDENTIALS, URLS } from "../../lib/constants";
+import { signInPage } from "../../pageFactory/signInPage";
 
 
 
@@ -9,28 +10,42 @@ test.beforeEach(async ({ page,signupPage } ) => {
   await signupPage.clickAcceptCookieButton();
 });
 
-test('Signup', async ({ page,emailPage ,signupPage}) => {
+test('Signup', async ({ page,context,emailPage ,signupPage,signInPage}) => {
   await page.locator('#header').getByRole('link', { name: 'Virtua' }).click();
   await page.getByRole('link', { name: 'Create an Account' }).click();
   await signupPage.signup(USER_CREDENTIALS.standard['username'], USER_CREDENTIALS.standard['password']);
-  await page.goto('https://marketplace.bimtvist.com/registrationconfirmed');
+  await signupPage.waitForPageLoad();
+  expect(await page.url()).toContain('https://marketplace.bimtvist.com/registrationconfirmed');
+  expect(await signupPage.isDisplayedConfirmationMessage()).toBeTruthy;
   await emailPage.navigateToUrl();
   await emailPage.clickAddInboxButton();
   await emailPage.addUserName(await signupPage.getDynamicName());
+  // await emailPage.addUserName("test");
+  await emailPage.selectDomain();
+  await emailPage.clickAddNowButton();
+  await emailPage.clickConfirmationEmailRow();
+  const pagePromise = context.waitForEvent('page');
+  await emailPage.clickConfirmButton();
+  const newPage = await pagePromise;
+  await newPage.waitForLoadState();
+  expect(await page.getByText('Your account has been confirmed.').isVisible()).toBeTruthy;
+  await  newPage.close();
+  await signInPage.navigateToUrl();
+  await signInPage.addUserName(await signupPage.getDynamicName());
+  await signInPage.PasswordInput();
+  await signInPage.clickloginButton();
+  await page.locator('#dropdown01').click();
+  await page.getByRole('link', { name: 'View Profile' }).click();
+  expect(await page.locator('//label[text()="User Name"]/following-sibling::div').innerHTML()).toContain(signupPage.getDynamicName());
+  await page.locator('#dropdown01').click();
+  await page.getByRole('link', { name: 'Logout' }).click();
 
 
 
 
-  // await page1.getByPlaceholder('user name').fill('https://marketplace.bimtvist.com/');
-  // await page1.getByPlaceholder('user name').click();
-  // await page1.getByPlaceholder('user name').press('Meta+z');
-  // await page1.getByPlaceholder('user name').fill('demoonce');
-  // await page1.getByRole('combobox').selectOption('getnada.com');
-  // await page1.getByRole('button', { name: 'Add now!' }).click();
-  // await page1.getByRole('cell', { name: 'Welcome to Virtua' }).click();
-  // await page1.getByRole('link', { name: 'Welcome to Virtua' }).click();
-  // await page1.frameLocator('#the_message_iframe').getByRole('heading', { name: 'Hi demo' }).click();
-  // await page1.frameLocator('#the_message_iframe').getByRole('link', { name: 'Click to Confirm' }).click();
+
+
+  
   // await page2.getByText('Your account has been confirmed.').click();
   // await page2.getByPlaceholder('Username').click();
   // await page2.getByPlaceholder('Username').fill('demoonce');

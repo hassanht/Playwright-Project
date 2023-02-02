@@ -1,1 +1,0 @@
-Locator@a[class="custom-btn light lg"] span[class="txt"]

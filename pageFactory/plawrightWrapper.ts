@@ -28,7 +28,7 @@ export class PlaywrightWrapper {
     }
 
     async waitForLocator(element: Locator) {
-        return await element.waitFor();
+        return await element.waitFor({state:"visible",timeout:10000});
     }
 
     async getElementCounts(element: Locator[]): Promise<number> {
