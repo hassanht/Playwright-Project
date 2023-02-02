@@ -8,3 +8,4 @@ test-results/
 playwright-report/
 */snapshots/
 test-result.json
+.DS_Store
