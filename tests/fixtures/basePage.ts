@@ -1,12 +1,19 @@
 import { test as base } from "@playwright/test";
 import { SignupPage } from "../../pageFactory/signupPage";
 import { EmailPage } from "../../pageFactory/emailPage";
-import { signInPage } from "../../pageFactory/signInPage";
+import { SignInPage } from "../../pageFactory/signInPage";
+import { ProfilePage } from "../../pageFactory/profilePage";
+import { HeaderPage } from "../../pageFactory/headerPage";
+import { MarketplacePage } from "../../pageFactory/marketPlace";
+
 
 export const test = base.extend<{
     signupPage: SignupPage;
     emailPage: EmailPage;
-    signInPage: signInPage;
+    signInPage: SignInPage;
+    profilePage: ProfilePage;
+    headerPage :HeaderPage ;
+    marketplacePage:MarketplacePage;
 
 }>({
     signupPage: async ({ page }, use) => {
@@ -16,6 +23,17 @@ export const test = base.extend<{
         use(new EmailPage(page));
     },
     signInPage: async ({ page }, use) => {
-        use(new signInPage(page));
+        use(new SignInPage(page));
     },
+    profilePage: async ({ page }, use) => {
+        use(new ProfilePage(page));
+    },
+    headerPage : async ({ page }, use) => {
+        use(new HeaderPage(page));
+    },
+
+    marketplacePage : async ({ page }, use) => {
+        use(new MarketplacePage(page));
+    },
+
 });

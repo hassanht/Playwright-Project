@@ -6,7 +6,7 @@
   "scripts": {
     "test": "npx playwright test && npm run report",
     "report": "allure serve",
-    "delete-report-folder": "cmd.exe /c delete-report-folder.bat"
+    "delete-report-folder": "cmd.exe /c delete-report-folder.bash"
   },
   "keywords": [],
   "author": "",

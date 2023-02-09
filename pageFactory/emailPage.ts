@@ -1,4 +1,4 @@
-import { Locator, Page, BrowserContext } from "@playwright/test";
+import { Locator, Page, BrowserContext, FrameLocator } from "@playwright/test";
 import { PlaywrightWrapper } from "./plawrightWrapper";
 
 export class EmailPage {
@@ -10,6 +10,8 @@ export class EmailPage {
     #addNowButton: Locator;
     #cofirmationEmailRow:Locator;
     #confirmButton:Locator;
+    #forgetPasswordRow:Locator;
+    #forgetCode:Locator;
    
 
     constructor(page: Page) {
@@ -21,6 +23,8 @@ export class EmailPage {
         this.#addNowButton = this.#page.locator('button.bg-indigo-500.text-white');
         this.#cofirmationEmailRow = this.#page.locator("//a[contains(text(),'Welcome to Virtua')]");
         this.#confirmButton=this.#page.frameLocator('#the_message_iframe').getByRole('link', { name: 'Click to Confirm' });
+        this.#forgetPasswordRow = this.#page.locator('(//a[contains(text(),"Forgot Password")])[1]');
+        this.#forgetCode = this.#page.frameLocator('#the_message_iframe').locator('td[align="left"] div div p b');
     
     }
 
@@ -64,11 +68,23 @@ export class EmailPage {
         await this.#playwrightWrapper.click(this.#confirmButton);
 
     } 
+    async clickForgetPasswordRow(): Promise<void> {
+        await this.#playwrightWrapper.click(this.#forgetPasswordRow)
+
+    } 
+
+
+    async getForgetCode(): Promise<string> {
+        return await this.#forgetCode.innerHTML();
+
+    } 
+    async closePage(): Promise<void> {
+        this.#page.close();
+
+    } 
 
 }
-function combobox(arg0: string, combobox: any, arg2: string, com: any, arg4: string): Location {
-    throw new Error("Function not implemented.");
-}
+
 
 
 

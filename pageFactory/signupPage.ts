@@ -19,7 +19,7 @@ export class SignupPage {
     #avatarImage: Locator;
     #chooseAvatar: Locator;
     #avatarAccountButton: Locator;
-    #confirmationMessage:Locator;
+    #confirmationMessage: Locator;
 
     constructor(page: Page) {
         this.#page = page;
@@ -39,7 +39,7 @@ export class SignupPage {
         this.#avatarImage = this.#page.locator('div.cascade-slider_item.now');
         this.#chooseAvatar = this.#page.locator('#cascade-slider span');
         this.#avatarAccountButton = this.#page.locator('button.btn.custom-btn');
-        this.#confirmationMessage=this.#page.getByText('An email has been sent to your Email address to verify your account')
+        this.#confirmationMessage = this.#page.getByText('An email has been sent to your Email address to verify your account')
     }
 
     async signup(username: string, password: string): Promise<void> {
@@ -49,20 +49,19 @@ export class SignupPage {
         await this.enteremailAddressInput();
         await this.clicktermsConditionCheckbox();
         await this.clicksignMeUpButton();
-        await this.entercreatePasswordInput();
-        await this.enterconfirmPasswordInput();
+        await this.entercreatePasswordInput(password);
+        await this.enterconfirmPasswordInput(password);
         await this.selectCountryDropdown();
         await this.clickcreateAccountButton();
         await this.selectAvatar();
         await this.clickAvatarAccountButton();
-        
-    }
-   
 
-    async clickAcceptCookieButton():Promise<void> {
-        console.log(this.#acceptCookieButton)
+    }
+
+
+    async clickAcceptCookieButton(): Promise<void> {
         await this.#playwrightWrapper.click(this.#acceptCookieButton);
-       
+
     }
 
     async enterfirstNameInput(username: string): Promise<void> {
@@ -91,17 +90,20 @@ export class SignupPage {
         await this.#playwrightWrapper.click(this.#signMeUpButton);
     }
 
-    async entercreatePasswordInput(): Promise<void> {
-        await this.#playwrightWrapper.fill(this.#passwordInput, '12@Pakistan');
+    async entercreatePasswordInput(password: string): Promise<void> {
+        await this.#playwrightWrapper.fill(this.#passwordInput, password);
 
     }
 
-    async enterconfirmPasswordInput(): Promise<void> {
-        await this.#playwrightWrapper.fill(this.#confirmPasswordInput, '12@Pakistan');
+    async enterconfirmPasswordInput(password: string): Promise<void> {
+        await this.#playwrightWrapper.fill(this.#confirmPasswordInput, password);
 
     }
     async selectCountryDropdown(): Promise<void> {
-        await this.#countryDropdown.selectOption("14");
+        const len = (await this.#countryDropdown.locator('option').all()).length;
+        const randomIndex = Math.floor(Math.random() * len);
+        await this.#countryDropdown.selectOption(randomIndex.toString());
+        
 
     }
     async clickcreateAccountButton(): Promise<void> {
@@ -115,13 +117,13 @@ export class SignupPage {
 
     async clickAvatarAccountButton(): Promise<void> {
         await this.#playwrightWrapper.click(this.#avatarAccountButton);
-        await this.#page.waitForNavigation({waitUntil:"networkidle"});
+        await this.#page.waitForNavigation({ waitUntil: "networkidle" });
     }
 
     async isDisplayedConfirmationMessage(): Promise<boolean> {
         return this.#confirmationMessage.isVisible();
 
-    } 
+    }
 
     async getDynamicName(): Promise<string> {
         return this.#dynamicName;
@@ -129,9 +131,7 @@ export class SignupPage {
 
     async generateName(): Promise<void> {
         const currentTime = Date.now() * 1000000;
-        this.#dynamicName = "user" + currentTime.toString().slice(10);
-
-        console.log(this.#dynamicName);
+        this.#dynamicName = "user" + currentTime.toString().slice(6);
     }
 
     async waitForPageLoad(): Promise<void> {

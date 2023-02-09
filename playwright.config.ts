@@ -14,13 +14,13 @@ const config: PlaywrightTestConfig = {
  
   testDir: './tests',
   /* Maximum time one test can run for. */
-  timeout: 10000*60*2,
+  timeout: 1000*60*2,
   expect: {
     /**
      * Maximum time expect() should wait for the condition to be met.
      * For example in `await expect(locator).toHaveText();`
      */
-    timeout: 5000
+    timeout: 10000
   },
   /* Run tests in files in parallel */
   fullyParallel: false,
@@ -42,7 +42,7 @@ const config: PlaywrightTestConfig = {
     headless: false,
     viewport: { width: 1920, height: 1080 },
     launchOptions: {
-      slowMo: 500,
+      slowMo: 800,
     },
     /* Base URL to use in actions like `await page.goto('/')`. */
     // baseURL: 'https://www.saucedemo.com',

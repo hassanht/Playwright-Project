@@ -1,4 +1,6 @@
-export const USER_CREDENTIALS = {
+import * as path from 'path';
+export const USERDATA_FILEPATH=path.join(__dirname, 'userData.csv');
+export let USER_CREDENTIALS = {
     admin: {
         username: 'admin@example.com',
         password: 'password123',
@@ -8,8 +10,9 @@ export const USER_CREDENTIALS = {
         password: 'password123',
     },
     standard: {
-        username: 'standard_user',
-        password: 'secret_sauce',
+        username: 'newoptest',
+        password: '123@Pakistan',
+        newPassword:'12@Pakistan',
     },
     locked_out: {
         username: 'locked_out_user',
@@ -17,8 +20,15 @@ export const USER_CREDENTIALS = {
     }
 };
 
-export const URLS = {
-    home: 'https://www.saucedemo.com',
-    inventory: 'https://www.saucedemo.com/inventory.html',
 
+export const URLS = {
+    login: 'https://marketplace.bimtvist.com/login',
+    registrationConfirmed: 'https://marketplace.bimtvist.com/registrationconfirmed',
+   
 };
+
+
+
+
+
+
