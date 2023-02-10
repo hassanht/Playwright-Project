@@ -4,7 +4,8 @@ import { EmailPage } from "../../pageFactory/emailPage";
 import { SignInPage } from "../../pageFactory/signInPage";
 import { ProfilePage } from "../../pageFactory/profilePage";
 import { HeaderPage } from "../../pageFactory/headerPage";
-import { MarketplacePage } from "../../pageFactory/marketPlace";
+import { MarketplacePage } from "../../pageFactory/marketplacePage";
+import { AddToCartPage } from "../../pageFactory/addToCartPage";
 
 
 export const test = base.extend<{
@@ -14,6 +15,7 @@ export const test = base.extend<{
     profilePage: ProfilePage;
     headerPage :HeaderPage ;
     marketplacePage:MarketplacePage;
+    addToCartPage: AddToCartPage;
 
 }>({
     signupPage: async ({ page }, use) => {
@@ -34,6 +36,9 @@ export const test = base.extend<{
 
     marketplacePage : async ({ page }, use) => {
         use(new MarketplacePage(page));
+    },
+    addToCartPage : async ({ page }, use) => {
+        use(new AddToCartPage(page));
     },
 
 });

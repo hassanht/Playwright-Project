@@ -3,6 +3,8 @@ import { test } from "../fixtures/basePage";
 import { USER_CREDENTIALS, URLS,USERDATA_FILEPATH } from "../../lib/constants";
 import { readCSV, updatePassword } from "../../lib/utility";
 import { EmailPage } from "../../pageFactory/emailPage";
+import { MarketplacePage } from "../../pageFactory/marketplacePage";
+import { AddToCartPage } from "../../pageFactory/addToCartPage";
 
 
 
@@ -21,7 +23,7 @@ test('Signup', async ({ page, context, emailPage, signupPage, signInPage, profil
   await signupPage.signup(USER_CREDENTIALS.standard['username'], USER_CREDENTIALS.standard['password']);
   await signupPage.waitForPageLoad();
   expect(await page.url()).toContain(URLS.registrationConfirmed);
-  expect(await signupPage.isDisplayedConfirmationMessage()).toBeTruthy;
+  expect(await signupPage.isDisplayedConfirmationMessage()).toEqual(true);
   await emailPage.navigateToUrl();
   await emailPage.clickAddInboxButton();
   await emailPage.addUserName(await signupPage.getDynamicName());
@@ -32,7 +34,7 @@ test('Signup', async ({ page, context, emailPage, signupPage, signInPage, profil
   await emailPage.clickConfirmButton();
   const newPage = await pagePromise;
   await newPage.waitForLoadState();
-  expect(await page.getByText('Your account has been confirmed.').isVisible()).toBeTruthy;
+  expect(await page.getByText('Your account has been confirmed.').isVisible()).toEqual(true);
   await newPage.close();
   await login(signInPage, profilePage, await signupPage.getDynamicName(), USER_CREDENTIALS.standard.password);
   await logout(profilePage);
@@ -60,7 +62,7 @@ test('Forgot Paassword', async ({ emailPage, context, page, profilePage, signInP
   await signInPage.enterCodeInput(await emailPage.getForgetCode());
   await emailPage.closePage();
   await signInPage.clickupdateButton();
-  expect(await signInPage.isDisplayedPasswordResetMessage()).toBeTruthy;
+  expect(await signInPage.isDisplayedPasswordResetMessage()).toEqual(true);
   await login(signInPage, profilePage, USER_CREDENTIALS.standard.username, USER_CREDENTIALS.standard.password);
   await logout(profilePage);
 
@@ -68,7 +70,6 @@ test('Forgot Paassword', async ({ emailPage, context, page, profilePage, signInP
 });
 
 test('Reset Password', async ({ page, profilePage, signInPage, }): Promise<void> => {
-console.log(USERDATA_FILEPATH);
   let user = await getUserData(USERDATA_FILEPATH, 'tenmeta');
   if (!user.userData) {
     console.error(`User 'tenmeta' not found in file ${USERDATA_FILEPATH}`);
@@ -81,7 +82,7 @@ console.log(USERDATA_FILEPATH);
   await profilePage.enterConfirmNewPasswordInput(user.userData.newpassword);
   await updatePassword(user.data, USERDATA_FILEPATH, user.userData.username, user.userData.password, user.userData.newpassword);
   await profilePage.clickUpdatePasswordButton();
-  expect(await profilePage.isDisplayedResetPasswordSucessMessage()).toBeTruthy;
+  expect(await profilePage.isDisplayedResetPasswordSucessMessage()).toEqual(true);
   await page.waitForURL("**/login");
   expect(await page.url()).toContain(URLS.login);
   let user1 = await getUserData(USERDATA_FILEPATH, 'tenmeta');
@@ -92,6 +93,31 @@ console.log(USERDATA_FILEPATH);
   await login(signInPage, profilePage, user1.userData.username, user1.userData.password);
   await logout(profilePage);
 });
+test.only('Marketplace', async ({ page, profilePage, signInPage,marketplacePage,addToCartPage}): Promise<void> => {
+  await signInPage.navigateToUrl();
+  await login(signInPage,profilePage,USER_CREDENTIALS.standard['username'], USER_CREDENTIALS.standard['password']);
+  await marketplacePage.clickMarketplaceLink();
+  await marketplacePage.clickonSaleButton();
+  await marketplacePage.clickPriceRangeFilter();
+  await marketplacePage.enterMinInputField();
+  await marketplacePage.enterMaxInputField();
+  await marketplacePage.clickConfirmButton();
+  await marketplacePage.clickItemLink();
+  await marketplacePage.clickAddToCartButton();
+  expect(await marketplacePage.isDisplayedaddToCartSucessMessage()).toEqual(true);
+  await marketplacePage.clickCartIcon();
+  await addToCartPage.clickProceedToCheckOutButton();
+  expect(await addToCartPage.getItemPriceInCartText()).toContain(await marketplacePage.getItemPriceText());
+  await addToCartPage.clickPayWithNewCreditRadioButton();
+  await addToCartPage.enterCardNumberInputField();
+  await addToCartPage.enterExpirationDateInputField();
+  await addToCartPage.enterCvcInputField();
+  await addToCartPage.clickPayNowButton();
+  console.log(await addToCartPage.getViewTranscationButton());
+  expect (await addToCartPage.getViewTranscationButton()).toContain("View Transactions");
+
+  });
+
 
 async function login(signInPage, profilePage, username, password) {
   await signInPage.navigateToUrl();

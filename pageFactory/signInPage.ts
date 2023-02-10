@@ -1,4 +1,5 @@
 import { Locator, Page, BrowserContext } from "@playwright/test";
+import { URLS } from "../lib/constants";
 import { PlaywrightWrapper } from "./plawrightWrapper";
 
 export class SignInPage {
@@ -38,7 +39,7 @@ export class SignInPage {
     }
 
     async navigateToUrl(): Promise<void> {
-        await this.#page.goto("https://marketplace.bimtvist.com/login");
+        await this.#page.goto(URLS.login);
     }
 
     async addUserName(value: string): Promise<void> {
