@@ -9,12 +9,12 @@ export class ProfilePage {
     #viewProfileButton: Locator;
     #usernameText: Locator;
     #logoutLink: Locator;
-    #resetPassword:Locator;
-    #resetOldPassword:Locator;
-    #resetNewPassword:Locator;
-    #resetConfirmNewPassword:Locator;
-    #resetUpdatePasswordButton:Locator;
-    #resetPawwordSucessMessage:Locator;
+    #resetPassword: Locator;
+    #resetOldPassword: Locator;
+    #resetNewPassword: Locator;
+    #resetConfirmNewPassword: Locator;
+    #resetUpdatePasswordButton: Locator;
+    #resetPawwordSucessMessage: Locator;
 
 
 
@@ -27,12 +27,12 @@ export class ProfilePage {
         this.#viewProfileButton = this.#page.locator("//a[normalize-space()='View Profile']");
         this.#usernameText = this.#page.locator('(//div[@class="field-txt truncate"])[1]');
         this.#logoutLink = this.#page.getByRole('link', { name: 'Logout' });
-        this.#resetPassword=this.#page.getByRole('link', { name: 'Reset Password' });
-        this.#resetOldPassword=this.#page.getByPlaceholder('Old Password');
-        this.#resetNewPassword=this.#page.locator('#new_password');
-        this.#resetConfirmNewPassword=this.#page.getByPlaceholder('Confirm New Password');
-        this.#resetUpdatePasswordButton=this.#page.locator('//span[normalize-space()="Update Password"]');
-        this.#resetPawwordSucessMessage=this.#page.getByText("password changed sucessfully.")
+        this.#resetPassword = this.#page.getByRole('link', { name: 'Reset Password' });
+        this.#resetOldPassword = this.#page.getByPlaceholder('Old Password');
+        this.#resetNewPassword = this.#page.locator('#new_password');
+        this.#resetConfirmNewPassword = this.#page.getByPlaceholder('Confirm New Password');
+        this.#resetUpdatePasswordButton = this.#page.locator('//span[normalize-space()="Update Password"]');
+        this.#resetPawwordSucessMessage = this.#page.getByText("password changed sucessfully.")
     }
 
     async clickProfileIcon(): Promise<void> {
@@ -45,7 +45,7 @@ export class ProfilePage {
     async getUsernameText(): Promise<string> {
         return this.#usernameText.innerHTML();
     }
-   
+
 
     async clickResetPasswordLink(): Promise<void> {
         await this.#playwrightWrapper.click(this.#resetPassword)
@@ -53,23 +53,18 @@ export class ProfilePage {
 
     async enterOldPasswordInput(password): Promise<void> {
         await this.#playwrightWrapper.waitForLocator(this.#resetOldPassword);
-        await this.#playwrightWrapper.fill(this.#resetOldPassword,password);
+        await this.#playwrightWrapper.fill(this.#resetOldPassword, password);
     }
 
     async enterNewPasswordInput(password): Promise<void> {
-        await this.#playwrightWrapper.fill(this.#resetNewPassword,password)
+        await this.#playwrightWrapper.fill(this.#resetNewPassword, password)
     }
     async enterConfirmNewPasswordInput(password): Promise<void> {
-        await this.#playwrightWrapper.fill(this.#resetConfirmNewPassword,password)
+        await this.#playwrightWrapper.fill(this.#resetConfirmNewPassword, password)
     }
 
     async clickUpdatePasswordButton(): Promise<void> {
         await this.#playwrightWrapper.click(this.#resetUpdatePasswordButton)
-    }
-
-    async isDisplayedResetPasswordSucessMessage(): Promise<boolean> {
-        return await this.#resetPawwordSucessMessage.isVisible();
-
     }
 
 
@@ -78,7 +73,7 @@ export class ProfilePage {
         await this.#playwrightWrapper.click(this.#logoutLink)
     }
 
-    
+
 
 }
 

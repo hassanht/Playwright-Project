@@ -89,7 +89,8 @@ export class SignInPage {
     }
 
     async isDisplayedPasswordResetMessage(): Promise<boolean> {
-        return this.#passwordResetMessage.isVisible();
+        await this.#playwrightWrapper.waitForLocator(this.#passwordResetMessage);
+        return await this.#passwordResetMessage.isVisible();
 
     }
 

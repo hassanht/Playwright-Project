@@ -43,7 +43,7 @@ test('Signup', async ({ page, context, emailPage, signupPage, signInPage, profil
 
 
 
-test('Forgot Paassword', async ({ emailPage, context, page, profilePage, signInPage, headerPage }) => {
+test.only('Forgot Paassword', async ({ emailPage, context, page, profilePage, signInPage, headerPage }) => {
   await headerPage.clickHeaderLink();
   await signInPage.clickforgotPasswordLink();
   await signInPage.enterforgotPasswordEmail(USER_CREDENTIALS.standard.username);
@@ -93,7 +93,7 @@ test.only('Reset Password', async ({ page, profilePage, signInPage, }): Promise<
   await logout(profilePage);
 });
 
-test('Marketplace', async ({ page, profilePage, signInPage, marketplacePage, addToCartPage }): Promise<void> => {
+test.only('Marketplace', async ({ page, profilePage, signInPage, marketplacePage, addToCartPage }): Promise<void> => {
   await signInPage.navigateToUrl();
   await login(signInPage, profilePage, USER_CREDENTIALS.standard['username'], USER_CREDENTIALS.standard['password']);
   await marketplacePage.clickMarketplaceLink();
