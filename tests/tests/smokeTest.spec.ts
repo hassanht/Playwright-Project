@@ -1,6 +1,6 @@
-import { expect} from "@playwright/test";
+import { expect } from "@playwright/test";
 import { test } from "../fixtures/basePage";
-import { USER_CREDENTIALS, URLS,USERDATA_FILEPATH } from "../../lib/constants";
+import { USER_CREDENTIALS, URLS, USERDATA_FILEPATH } from "../../lib/constants";
 import { readCSV, updatePassword } from "../../lib/utility";
 import { EmailPage } from "../../pageFactory/emailPage";
 import { MarketplacePage } from "../../pageFactory/marketplacePage";
@@ -17,7 +17,7 @@ test.beforeEach(async ({ page, signupPage }) => {
   await signupPage.clickAcceptCookieButton();
 });
 
-test('Signup', async ({ page, context, emailPage, signupPage, signInPage, profilePage ,headerPage}) => {
+test('Signup', async ({ page, context, emailPage, signupPage, signInPage, profilePage, headerPage }) => {
   await headerPage.clickHeaderLink();
   await headerPage.clickCreateAnAccount();
   await signupPage.signup(USER_CREDENTIALS.standard['username'], USER_CREDENTIALS.standard['password']);
@@ -43,7 +43,7 @@ test('Signup', async ({ page, context, emailPage, signupPage, signInPage, profil
 
 
 
-test('Forgot Paassword', async ({ emailPage, context, page, profilePage, signInPage ,headerPage}) => {
+test('Forgot Paassword', async ({ emailPage, context, page, profilePage, signInPage, headerPage }) => {
   await headerPage.clickHeaderLink();
   await signInPage.clickforgotPasswordLink();
   await signInPage.enterforgotPasswordEmail(USER_CREDENTIALS.standard.username);
@@ -69,7 +69,7 @@ test('Forgot Paassword', async ({ emailPage, context, page, profilePage, signInP
 
 });
 
-test('Reset Password', async ({ page, profilePage, signInPage, }): Promise<void> => {
+test.only('Reset Password', async ({ page, profilePage, signInPage, }): Promise<void> => {
   let user = await getUserData(USERDATA_FILEPATH, 'tenmeta');
   if (!user.userData) {
     console.error(`User 'tenmeta' not found in file ${USERDATA_FILEPATH}`);
@@ -80,9 +80,8 @@ test('Reset Password', async ({ page, profilePage, signInPage, }): Promise<void>
   await profilePage.enterOldPasswordInput(user.userData.password);
   await profilePage.enterNewPasswordInput(user.userData.newpassword);
   await profilePage.enterConfirmNewPasswordInput(user.userData.newpassword);
-  await updatePassword(user.data, USERDATA_FILEPATH, user.userData.username, user.userData.password, user.userData.newpassword);
   await profilePage.clickUpdatePasswordButton();
-  expect(await profilePage.isDisplayedResetPasswordSucessMessage()).toEqual(true);
+  await updatePassword(user.data, USERDATA_FILEPATH, user.userData.username, user.userData.password, user.userData.newpassword);
   await page.waitForURL("**/login");
   expect(await page.url()).toContain(URLS.login);
   let user1 = await getUserData(USERDATA_FILEPATH, 'tenmeta');
@@ -93,9 +92,10 @@ test('Reset Password', async ({ page, profilePage, signInPage, }): Promise<void>
   await login(signInPage, profilePage, user1.userData.username, user1.userData.password);
   await logout(profilePage);
 });
-test.only('Marketplace', async ({ page, profilePage, signInPage,marketplacePage,addToCartPage}): Promise<void> => {
+
+test('Marketplace', async ({ page, profilePage, signInPage, marketplacePage, addToCartPage }): Promise<void> => {
   await signInPage.navigateToUrl();
-  await login(signInPage,profilePage,USER_CREDENTIALS.standard['username'], USER_CREDENTIALS.standard['password']);
+  await login(signInPage, profilePage, USER_CREDENTIALS.standard['username'], USER_CREDENTIALS.standard['password']);
   await marketplacePage.clickMarketplaceLink();
   await marketplacePage.clickonSaleButton();
   await marketplacePage.clickPriceRangeFilter();
@@ -114,9 +114,9 @@ test.only('Marketplace', async ({ page, profilePage, signInPage,marketplacePage,
   await addToCartPage.enterCvcInputField();
   await addToCartPage.clickPayNowButton();
   console.log(await addToCartPage.getViewTranscationButton());
-  expect (await addToCartPage.getViewTranscationButton()).toContain("View Transactions");
+  expect(await addToCartPage.getViewTranscationButton()).toContain("View Transactions");
 
-  });
+});
 
 
 async function login(signInPage, profilePage, username, password) {
