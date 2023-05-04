@@ -17,7 +17,20 @@ test.beforeEach(async ({ page, signupPage }) => {
   await signupPage.clickAcceptCookieButton();
 });
 
-test('Signup', async ({ page, context, emailPage, signupPage, signInPage, profilePage, headerPage }) => {
+
+test.only('Login with Metamask', async ({ page, context,  headerPage ,wallet }): Promise<void> => {
+  await headerPage.clickHeaderLink();
+  const [newPage] = await Promise.all([
+    context.waitForEvent('page'),
+    page.locator('//span[normalize-space()="Sign In with Metamask"]').click()
+  ]);
+  await newPage.locator('//button[normalize-space()="Next"]').click();
+  await newPage.locator('.button.btn--rounded.btn-primary.page-container__footer-button').click();
+  });
+
+
+
+test('Signup', async ({ page, context, emailPage, signupPage, signInPage, profilePage, headerPage ,wallet}) => {
   await headerPage.clickHeaderLink();
   await headerPage.clickCreateAnAccount();
   await signupPage.signup(USER_CREDENTIALS.standard['username'], USER_CREDENTIALS.standard['password']);
@@ -43,7 +56,7 @@ test('Signup', async ({ page, context, emailPage, signupPage, signInPage, profil
 
 
 
-test.only('Forgot Paassword', async ({ emailPage, context, page, profilePage, signInPage, headerPage }) => {
+test('Forgot Paassword', async ({ emailPage, context, page, profilePage, signInPage, headerPage }) => {
   await headerPage.clickHeaderLink();
   await signInPage.clickforgotPasswordLink();
   await signInPage.enterforgotPasswordEmail(USER_CREDENTIALS.standard.username);
@@ -69,7 +82,7 @@ test.only('Forgot Paassword', async ({ emailPage, context, page, profilePage, si
 
 });
 
-test.only('Reset Password', async ({ page, profilePage, signInPage, }): Promise<void> => {
+test('Reset Password', async ({ page, profilePage, signInPage, }): Promise<void> => {
   let user = await getUserData(USERDATA_FILEPATH, 'tenmeta');
   if (!user.userData) {
     console.error(`User 'tenmeta' not found in file ${USERDATA_FILEPATH}`);
@@ -93,7 +106,7 @@ test.only('Reset Password', async ({ page, profilePage, signInPage, }): Promise<
   await logout(profilePage);
 });
 
-test.only('Marketplace', async ({ page, profilePage, signInPage, marketplacePage, addToCartPage }): Promise<void> => {
+test('Marketplace', async ({ page, profilePage, signInPage, marketplacePage, addToCartPage }): Promise<void> => {
   await signInPage.navigateToUrl();
   await login(signInPage, profilePage, USER_CREDENTIALS.standard['username'], USER_CREDENTIALS.standard['password']);
   await marketplacePage.clickMarketplaceLink();

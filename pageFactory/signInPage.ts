@@ -1,4 +1,4 @@
-import { Locator, Page, BrowserContext } from "@playwright/test";
+import { Locator, Page, BrowserContext, LocatorScreenshotOptions } from "@playwright/test";
 import { URLS } from "../lib/constants";
 import { PlaywrightWrapper } from "./plawrightWrapper";
 
@@ -18,6 +18,7 @@ export class SignInPage {
     #enterCodeInput:Locator;
     #updateButton:Locator;
     #passwordResetMessage: Locator;
+    
 
     constructor(page: Page) {
         this.#page = page;
@@ -35,7 +36,7 @@ export class SignInPage {
         this.#enterCodeInput = this.#page.locator("div[class='input_row'] input[placeholder='Enter Code']");
         this.#updateButton = this.#page.locator("button[class='custom-btn dark-bg md br-100']");
         this.#passwordResetMessage = this.#page.getByText('Password reset successfully.');
-  
+       
     }
 
     async navigateToUrl(): Promise<void> {
