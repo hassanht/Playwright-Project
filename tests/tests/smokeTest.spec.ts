@@ -26,6 +26,8 @@ test.only('Login with Metamask', async ({ page, context,  headerPage ,wallet }):
   ]);
   await newPage.locator('//button[normalize-space()="Next"]').click();
   await newPage.locator('.button.btn--rounded.btn-primary.page-container__footer-button').click();
+  await newPage.locator('.button.btn--rounded.btn-primary.btn--large.request-signature__footer__sign-button').click();
+  await page.goto("https://marketplace.bimtvist.com/marketplace");
   });
 
 

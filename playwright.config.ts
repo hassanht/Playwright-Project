@@ -42,7 +42,7 @@ const config: PlaywrightTestConfig = {
     headless: false,
     viewport: { width: 1920, height: 1080 },
     launchOptions: {
-      slowMo: 40,
+      slowMo: 400,
     },
     /* Base URL to use in actions like `await page.goto('/')`. */
     // baseURL: 'https://www.saucedemo.com',

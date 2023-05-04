@@ -28,7 +28,7 @@ export const test = base.extend<{
         const [wallet, _, context] = await dappwright.bootstrap("", {
           wallet: "metamask",
           version: MetaMaskWallet.recommendedVersion,
-          seed: "banana eternal eye act input genuine champion sugar depth above roof brand", // Hardhat's default https://hardhat.org/hardhat-network/docs/reference#accounts
+          seed: "filter decide frequent fancy same grape hill marine wealth text next medal", // Hardhat's default https://hardhat.org/hardhat-network/docs/reference#accounts
           headless: false,
         });
     
