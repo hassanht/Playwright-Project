@@ -18,17 +18,28 @@ test.beforeEach(async ({ page, signupPage }) => {
 });
 
 
-test.only('Login with Metamask', async ({ page, context,  headerPage ,wallet }): Promise<void> => {
+test.only('Login with Metamask', async ({ page, context,  headerPage ,wallet ,profilePage}): Promise<void> => {
   await headerPage.clickHeaderLink();
   const [newPage] = await Promise.all([
     context.waitForEvent('page'),
     page.locator('//span[normalize-space()="Sign In with Metamask"]').click()
   ]);
-  await newPage.locator('//button[normalize-space()="Next"]').click();
+  await newPage.locator('button:has-text("Next")').click();
+  await newPage.waitForSelector('.permissions-connect-header__title'); 
+  const text = await newPage.locator('.permissions-connect-header__title').innerText();
+  const parts = text.split(' ');
+  const account = parts[4].slice(-4, -1); 
+  console.log("Metamask account:", account);
   await newPage.locator('.button.btn--rounded.btn-primary.page-container__footer-button').click();
   await newPage.locator('.button.btn--rounded.btn-primary.btn--large.request-signature__footer__sign-button').click();
-  await page.goto("https://marketplace.bimtvist.com/marketplace");
+  await profilePage.clickProfileIcon();
+  await profilePage.clickViewProfileButton(); 
+  const metamaskAccount = await profilePage.clickMetamaskAccount();
+  console.log("beforeMetamask account:", account,"After:", metamaskAccount);
+  expect(account).toEqual(metamaskAccount);
+
   });
+
 
 
 

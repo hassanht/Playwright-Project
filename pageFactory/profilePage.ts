@@ -15,6 +15,7 @@ export class ProfilePage {
     #resetConfirmNewPassword: Locator;
     #resetUpdatePasswordButton: Locator;
     #resetPawwordSucessMessage: Locator;
+    #getMetaMaskAccount:Locator;
 
 
 
@@ -33,6 +34,7 @@ export class ProfilePage {
         this.#resetConfirmNewPassword = this.#page.getByPlaceholder('Confirm New Password');
         this.#resetUpdatePasswordButton = this.#page.locator('//span[normalize-space()="Update Password"]');
         this.#resetPawwordSucessMessage = this.#page.getByText("password changed sucessfully.")
+        this.#getMetaMaskAccount = this.#page.locator(".mb-0.truncate")
     }
 
     async clickProfileIcon(): Promise<void> {
@@ -71,6 +73,15 @@ export class ProfilePage {
 
     async clickLogoutLink(): Promise<void> {
         await this.#playwrightWrapper.click(this.#logoutLink)
+    }
+
+
+    async clickMetamaskAccount(): Promise<string> {
+        await this.#playwrightWrapper.click(this.#getMetaMaskAccount);
+        const text = await this.#getMetaMaskAccount.innerText();
+        const lastThreeDigits = text.slice(-3);
+        return lastThreeDigits;
+        
     }
 
 
